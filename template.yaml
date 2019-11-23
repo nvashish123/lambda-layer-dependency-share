@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  LambdaLayers
+
+  Sample SAM Template for LambdaLayers
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 5
+
+Resources:
+  ListS3Function:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: app/
+      Handler: listS3Function.lambda_handler
+      Runtime: python2.7
+      Role: arn:aws:iam::905621505184:role/lambda_basic_execution
+      
+        
+
