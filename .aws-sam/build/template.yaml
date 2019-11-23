@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'LambdaLayers
+
+  Sample SAM Template for LambdaLayers
+
+  '
+Globals:
+  Function:
+    Timeout: 5
+Resources:
+  ListS3Function:
+    Properties:
+      CodeUri: ListS3Function
+      Handler: listS3Function.lambda_handler
+      Role: arn:aws:iam::905621505184:role/lambda_basic_execution
+      Runtime: python2.7
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31
